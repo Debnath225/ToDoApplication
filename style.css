@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  scroll-behavior: smooth;
+}
+body {
+  background-image: linear-gradient(
+    45deg,
+    rgb(154, 206, 10),
+    rgb(102, 159, 102),
+    rgb(13, 13, 220)
+  );
+  background-repeat: no-repeat;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  overflow-y: hidden;
+}
+header h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 5vh;
+}
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5vh;
+}
+.inputContainer {
+  display: flex;
+  align-items: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 1.3rem;
+  filter: drop-shadow(0px 0px 19px rgb(91, 91, 91));
+}
+#toDoInput {
+  outline: none;
+  width: clamp(30dvw, 60dvw, 60dvw);
+  border: 1px solid rgb(250, 151, 4);
+  padding: 1vh;
+  font-size: 1.1rem;
+  border-top-left-radius: 2vh;
+  border-bottom-left-radius: 2vh;
+}
+#toDoInput:focus,
+#add:focus {
+  border: 1px solid rgb(0, 94, 255);
+}
+#add {
+  outline: none;
+  border: 1px solid rgb(4, 250, 115);
+  font-size: 1.1rem;
+  padding: 1vh;
+  border-top-right-radius: 2vh;
+  border-bottom-right-radius: 2vh;
+  cursor: pointer;
+  background-color: aqua;
+}
+
+.results {
+  min-height: 30vh;
+  max-width: 100dvw;
+  height: 50vh;
+  width: 80dvw;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 2vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  padding: 1vh;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+.results:hover :not(:hover) {
+  filter: blur(1.5px);
+}
+.toDoStyle {
+  height: auto;
+  width: 100%;
+  text-align: left;
+  font-family: "arial", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding: 2vh;
+  background-color: rgba(240, 248, 255, 0.868);
+  border-radius: 1vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2vh;
+}
+.toDoStyle > *:last-child {
+  margin-left: auto;
+}
+.toDoStyle:hover {
+  transition: all 0.2s ease-out;
+  scale: 1.01;
+  background-color: white;
+}
+.deleteStyle {
+  outline: none;
+  cursor: pointer;
+  font-family: "arial", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 1.1rem;
+  padding: 0.5vh 2vh;
+  background-color: rgba(255, 0, 0, 0.822);
+  color: #fff;
+  border-radius: 0.78vh;
+  border: none;
+}
+.deleteStyle:active {
+  transition: scale 0.2s ease;
+  scale: 0.85;
+}
+.TaskCompleted {
+  appearance: none;
+  color: rgb(9, 9, 9);
+}
+
+/* responsive start */
+@media only screen and (width<=570px) {
+  .results:hover :not(:hover) {
+    filter: blur(0px);
+  }
+}
+
+@media only screen and (width<=370px) {
+  #toDoInput,
+  #add {
+    padding: 0.5vh;
+  }
+  /* .inputContainer {
+    flex-direction: column;
+    gap: 2vh;
+  } */
+}
+/* responsive end */
