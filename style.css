@@ -37,7 +37,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 5vh;
+  gap: 8vh;
 }
 .inputContainer {
   display: flex;
