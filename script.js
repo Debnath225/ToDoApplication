@@ -38,6 +38,9 @@ function randerTasks() {
     checkBox.addEventListener("change", () => {
       task.completed = !task.completed;
       if (task.completed) {
+        localStorage.removeItem("task");
+        tasks[index].completed=true;
+        localStorage.setItem("task",JSON.stringify(tasks));
         ToDoElement.classList.add("TaskCompleted");
         ToDoElement.style.backgroundColor = "#30c61a";
       } else {
