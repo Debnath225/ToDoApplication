@@ -61,7 +61,7 @@ function randerTasks() {
       //   localStorage.removeItem();
       ToDoElement.remove();
       console.log("Deleted Sussfully");
-      localStorage.setItem("task",tasks);
+      localStorage.setItem("task",JSON.stringify(tasks));
     });
     ToDoElement.appendChild(DeleteElement);
   });
