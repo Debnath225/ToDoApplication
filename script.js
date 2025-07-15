@@ -44,6 +44,8 @@ function randerTasks() {
         localStorage.setItem("task",JSON.stringify(tasks));
       } else {
         ToDoElement.style.backgroundColor = "rgba(240, 248, 255, 0.868)";
+        tasks[index].completed=false;
+        localStorage.setItem("task",JSON.stringify(tasks));
       }
     });
 
