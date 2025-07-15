@@ -40,7 +40,6 @@ function randerTasks() {
       if (task.completed) {
         ToDoElement.classList.add("TaskCompleted");
         ToDoElement.style.backgroundColor = "#30c61a";
-        localStorage.removeItem("task");
         tasks[index].completed=true;
         localStorage.setItem("task",JSON.stringify(tasks));
       } else {
